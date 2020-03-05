@@ -60,3 +60,18 @@ JavaScript error: about:srcdoc, line 9: TypeError: parent is null
 
 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
 
+1583400607669	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\WINDOWS\\TEMP\\rust_mozprofileF1sPuO"
+1583400608001	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1583400608024	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1583400608024	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1583400608025	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1583400608025	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1583400609394	Marionette	INFO	Listening on port 61611
+1583400609789	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.amazon.com/s?k=Ferrari+458&ref=nb_sb_noss line 6 > scriptElement, line 1: Error: WebGL warning: getContext: Disallowing antialiased backbuffers due to blacklisting.
+JavaScript warning: https://www.amazon.com/RASTAR-Ferrari-Remote-Control-Italia/dp/B06ZZLKDL9/ref=sr_1_9?keywords=Ferrari+458&qid=1583400612&sr=8-9 line 6 > scriptElement, line 1: Error: WebGL warning: getContext: Disallowing antialiased backbuffers due to blacklisting.
+1583400624209	Marionette	INFO	Stopped listening on port 61611
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x58000D,name=PHttpChannel::Msg_DeletingChannel) Channel closing: too late to send/recv, messages will be lost
+
