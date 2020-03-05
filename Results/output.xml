@@ -1,115 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.1.2 (Python 3.8.1 on win32)" generated="20200304 11:07:05.951" rpa="false">
-<suite id="s1" name="Test" source="C:\Users\cristian.diaconu\PycharmProjects\FirstRobotFramework\tests\test.robot">
-<test id="s1-t1" name="SecondTest">
+<robot generator="Robot 3.1.2 (Python 3.8.1 on win32)" generated="20200305 11:14:10.249" rpa="false">
+<suite id="s1" name="Tests" source="C:\Users\cristian.diaconu\PycharmProjects\FirstRobotFramework\tests">
+<suite id="s1-s1" name="Test" source="C:\Users\cristian.diaconu\PycharmProjects\FirstRobotFramework\tests\Test.robot">
+<test id="s1-s1-t1" name="User must sign in to checkout">
+<kw name="Begin Web Test" library="Common" type="setup">
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the given ``url``.</doc>
 <arguments>
-<arg>http://www.amazon.com</arg>
-<arg>chrome</arg>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20200304 11:07:06.149" level="INFO">Opening browser 'chrome' to base url 'http://www.amazon.com'.</msg>
-<status status="PASS" starttime="20200304 11:07:06.149" endtime="20200304 11:07:11.732"></status>
+<msg timestamp="20200305 11:14:10.435" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20200305 11:14:10.435" endtime="20200305 11:14:15.752"></status>
+</kw>
+<status status="PASS" starttime="20200305 11:14:10.435" endtime="20200305 11:14:15.753"></status>
+</kw>
+<kw name="Search for Products" library="Amazon">
+<kw name="Load" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20200305 11:14:15.754" level="INFO">Opening url 'http://www.amazon.com'</msg>
+<status status="PASS" starttime="20200305 11:14:15.754" endtime="20200305 11:14:17.391"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200304 11:07:11.732" endtime="20200304 11:07:12.886"></status>
+<status status="PASS" starttime="20200305 11:14:17.391" endtime="20200305 11:14:17.661"></status>
 </kw>
+<status status="PASS" starttime="20200305 11:14:15.753" endtime="20200305 11:14:17.661"></status>
+</kw>
+<kw name="Verify Page Loaded" library="LandingPage">
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on current page.</doc>
 <arguments>
 <arg>Your Amazon.com</arg>
 </arguments>
-<status status="PASS" starttime="20200304 11:07:12.886" endtime="20200304 11:07:12.946"></status>
+<status status="PASS" starttime="20200305 11:14:17.662" endtime="20200305 11:14:17.772"></status>
 </kw>
+<status status="PASS" starttime="20200305 11:14:17.661" endtime="20200305 11:14:17.773"></status>
+</kw>
+<kw name="Search for Products" library="TopNav">
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
 <arguments>
 <arg>id=twotabsearchtextbox</arg>
-<arg>Ferrari 458</arg>
+<arg>${SEARCH_TERM}</arg>
 </arguments>
-<msg timestamp="20200304 11:07:12.948" level="INFO">Typing text 'Ferrari 458' into text field 'id=twotabsearchtextbox'.</msg>
-<status status="PASS" starttime="20200304 11:07:12.948" endtime="20200304 11:07:13.199"></status>
+<msg timestamp="20200305 11:14:17.773" level="INFO">Typing text 'Ferrari 458' into text field 'id=twotabsearchtextbox'.</msg>
+<status status="PASS" starttime="20200305 11:14:17.773" endtime="20200305 11:14:17.970"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>xpath=//div[@class='nav-search-submit nav-sprite']//input[@class='nav-input']</arg>
 </arguments>
-<msg timestamp="20200304 11:07:13.199" level="INFO">Clicking button 'xpath=//div[@class='nav-search-submit nav-sprite']//input[@class='nav-input']'.</msg>
-<status status="PASS" starttime="20200304 11:07:13.199" endtime="20200304 11:07:15.037"></status>
+<msg timestamp="20200305 11:14:17.970" level="INFO">Clicking button 'xpath=//div[@class='nav-search-submit nav-sprite']//input[@class='nav-input']'.</msg>
+<status status="PASS" starttime="20200305 11:14:17.970" endtime="20200305 11:14:19.423"></status>
 </kw>
+<status status="PASS" starttime="20200305 11:14:17.773" endtime="20200305 11:14:19.423"></status>
+</kw>
+<kw name="Verify Search Completed" library="SearchResults">
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on current page.</doc>
 <arguments>
-<arg>results for "Ferrari 458"</arg>
+<arg>results for "${SEARCH_TERM}"</arg>
 </arguments>
-<status status="PASS" starttime="20200304 11:07:15.038" endtime="20200304 11:07:15.089"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//span[contains(text(),'RASTAR Ferrari Remote Control Car, 1/24 Scale Ferr')]</arg>
-</arguments>
-<msg timestamp="20200304 11:07:15.090" level="INFO">Clicking element 'xpath=//span[contains(text(),'RASTAR Ferrari Remote Control Car, 1/24 Scale Ferr')]'.</msg>
-<status status="PASS" starttime="20200304 11:07:15.089" endtime="20200304 11:07:18.519"></status>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<doc>Waits until ``text`` appears on current page.</doc>
-<arguments>
-<arg>Back to results</arg>
-</arguments>
-<status status="PASS" starttime="20200304 11:07:18.528" endtime="20200304 11:07:18.758"></status>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<doc>Clicks button identified by ``locator``.</doc>
-<arguments>
-<arg>id=add-to-cart-button</arg>
-</arguments>
-<msg timestamp="20200304 11:07:18.759" level="INFO">Clicking button 'id=add-to-cart-button'.</msg>
-<status status="PASS" starttime="20200304 11:07:18.758" endtime="20200304 11:07:19.352"></status>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>id=hlb-ptc-btn-native</arg>
-</arguments>
-<status status="PASS" starttime="20200304 11:07:19.353" endtime="20200304 11:07:19.603"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//a[@id='hlb-ptc-btn-native']</arg>
-</arguments>
-<msg timestamp="20200304 11:07:19.604" level="INFO">Clicking element 'xpath=//a[@id='hlb-ptc-btn-native']'.</msg>
-<status status="PASS" starttime="20200304 11:07:19.603" endtime="20200304 11:07:19.908"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>1s</arg>
-</arguments>
-<msg timestamp="20200304 11:07:20.908" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20200304 11:07:19.908" endtime="20200304 11:07:20.908"></status>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<doc>Clicks button identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//button[@id='siNoCoverage-announce']</arg>
-</arguments>
-<msg timestamp="20200304 11:07:20.909" level="INFO">Clicking button 'xpath=//button[@id='siNoCoverage-announce']'.</msg>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes screenshot of the current page and embeds it into log file.</doc>
-<msg timestamp="20200304 11:07:21.260" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200304 11:07:20.944" endtime="20200304 11:07:21.260"></status>
+<msg timestamp="20200305 11:14:19.470" level="FAIL">NoSuchWindowException: Message: Browsing context has been discarded
+</msg>
+<status status="FAIL" starttime="20200305 11:14:19.435" endtime="20200305 11:14:19.471"></status>
 </kw>
-<msg timestamp="20200304 11:07:21.269" level="FAIL">Button with locator 'xpath=//button[@id='siNoCoverage-announce']' not found.</msg>
-<status status="FAIL" starttime="20200304 11:07:20.909" endtime="20200304 11:07:21.269"></status>
+<msg timestamp="20200305 11:14:19.471" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: Browsing context has been discarded
+</msg>
+<msg timestamp="20200305 11:14:19.480" level="FAIL">NoSuchWindowException: Message: Browsing context has been discarded
+</msg>
+<status status="FAIL" starttime="20200305 11:14:19.424" endtime="20200305 11:14:19.480"></status>
 </kw>
-<status status="FAIL" starttime="20200304 11:07:06.148" endtime="20200304 11:07:21.270" critical="yes">Button with locator 'xpath=//button[@id='siNoCoverage-announce']' not found.</status>
+<status status="FAIL" starttime="20200305 11:14:19.423" endtime="20200305 11:14:19.481"></status>
+</kw>
+<status status="FAIL" starttime="20200305 11:14:15.753" endtime="20200305 11:14:19.481"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200305 11:14:19.483" endtime="20200305 11:14:20.517"></status>
+</kw>
+<status status="PASS" starttime="20200305 11:14:19.482" endtime="20200305 11:14:20.517"></status>
+</kw>
+<tags>
+<tag>Smoke</tag>
+</tags>
+<status status="FAIL" starttime="20200305 11:14:10.434" endtime="20200305 11:14:20.518" critical="yes">NoSuchWindowException: Message: Browsing context has been discarded
+</status>
 </test>
-<doc>Suite description</doc>
-<status status="FAIL" starttime="20200304 11:07:05.953" endtime="20200304 11:07:21.271"></status>
+<status status="FAIL" starttime="20200305 11:14:10.273" endtime="20200305 11:14:20.520"></status>
+</suite>
+<status status="FAIL" starttime="20200305 11:14:10.251" endtime="20200305 11:14:20.522"></status>
 </suite>
 <statistics>
 <total>
@@ -117,11 +106,15 @@
 <stat pass="0" fail="1">All Tests</stat>
 </total>
 <tag>
+<stat pass="0" fail="1">Smoke</stat>
 </tag>
 <suite>
-<stat pass="0" fail="1" id="s1" name="Test">Test</stat>
+<stat pass="0" fail="1" id="s1" name="Tests">Tests</stat>
+<stat pass="0" fail="1" id="s1-s1" name="Test">Tests.Test</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20200305 11:14:19.471" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: Browsing context has been discarded
+</msg>
 </errors>
 </robot>
