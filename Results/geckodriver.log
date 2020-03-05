@@ -89,3 +89,33 @@ JavaScript warning: https://www.amazon.com/s?k=Ferrari+458&ref=nb_sb_noss line 6
 [Parent 13716, Gecko_IOThread] WARNING: file z:/task_1581105380/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 307
 JavaScript warning: https://www.amazon.com/RASTAR-Ferrari-Remote-Control-Italia/dp/B06ZZLKDL9/ref=sr_1_3?keywords=Ferrari+458&qid=1583404905&sr=8-3 line 6 > scriptElement, line 1: Error: WebGL warning: getContext: Disallowing antialiased backbuffers due to blacklisting.
 1583404918135	Marionette	INFO	Stopped listening on port 62029
+1583405612873	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\WINDOWS\\TEMP\\rust_mozprofileRtMHIK"
+1583405613318	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1583405613343	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1583405613343	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1583405613343	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1583405613343	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1583405614962	Marionette	INFO	Listening on port 63035
+1583405614992	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.amazon.com/ line 6 > scriptElement, line 1: Error: WebGL warning: getContext: Disallowing antialiased backbuffers due to blacklisting.
+JavaScript warning: https://www.amazon.com/s?k=Ferrari+458&ref=nb_sb_noss line 6 > scriptElement, line 1: Error: WebGL warning: getContext: Disallowing antialiased backbuffers due to blacklisting.
+[Parent 3336, Gecko_IOThread] WARNING: file z:/task_1581105380/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 307
+[Parent 3336, Gecko_IOThread] WARNING: file z:/task_1581105380/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 307
+JavaScript warning: https://www.amazon.com/RASTAR-Ferrari-Remote-Control-Italia/dp/B06ZZLKDL9/ref=sr_1_3?keywords=Ferrari+458&qid=1583405617&sr=8-3 line 6 > scriptElement, line 1: Error: WebGL warning: getContext: Disallowing antialiased backbuffers due to blacklisting.
+1583405629755	Marionette	INFO	Stopped listening on port 63035
+1583406316607	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\WINDOWS\\TEMP\\rust_mozprofilebLipEn"
+1583406317026	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1583406317056	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1583406317056	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1583406317056	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1583406317056	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1583406318871	Marionette	INFO	Listening on port 63789
+1583406319332	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.amazon.com/ line 6 > scriptElement, line 1: Error: WebGL warning: getContext: Disallowing antialiased backbuffers due to blacklisting.
+JavaScript warning: https://www.amazon.com/s?k=Ferrari+458&ref=nb_sb_noss line 6 > scriptElement, line 1: Error: WebGL warning: getContext: Disallowing antialiased backbuffers due to blacklisting.
+[Parent 17540, Gecko_IOThread] WARNING: file z:/task_1581105380/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 307
+[Parent 17540, Gecko_IOThread] WARNING: file z:/task_1581105380/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 307
+JavaScript warning: https://www.amazon.com/RASTAR-Ferrari-Remote-Control-Italia/dp/B06ZZLKDL9/ref=sr_1_3?keywords=Ferrari+458&qid=1583406322&sr=8-3 line 6 > scriptElement, line 1: Error: WebGL warning: getContext: Disallowing antialiased backbuffers due to blacklisting.
+1583406337825	Marionette	INFO	Stopped listening on port 63789
