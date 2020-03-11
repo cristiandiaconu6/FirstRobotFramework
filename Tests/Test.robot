@@ -3,11 +3,13 @@ Resource  ../Resources/Amazon.robot
 Resource  ../Resources/Common.robot
 Test Setup  Common.Begin Web Test
 Test Teardown  Common.End Web Test
-Resource  ../Resources/Variables.robot
+#Resource  ../Resources/Variables.robot
 
 
 *** Test Cases ***
+
 User must sign in to checkout
+    ${URL} =  set variable  http://www.google.com
     [Tags]  Smoke
     Amazon.Search for Products
     Amazon.Select Product from Search Results
