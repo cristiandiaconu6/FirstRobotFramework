@@ -7,6 +7,6 @@ Verify Product Added
 
 Proceed to Checkout
     click element  xpath=//a[@id='hlb-ptc-btn-native']
-    sleep   1s
-    click element  xpath=//button[@id='siNoCoverage-announce']
+    sleep   2s
+    click element  xpath=//*[@id="siNoCoverage-announce"]
     sleep   1s

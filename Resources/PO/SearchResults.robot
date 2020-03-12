@@ -1,6 +1,5 @@
 *** Settings ***
 Library  SeleniumLibrary
-Resource  ../Resources/Variables.robot
 
 *** Keywords ***
 Verify Search Completed
