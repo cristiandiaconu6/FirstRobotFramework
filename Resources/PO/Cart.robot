@@ -1,6 +1,5 @@
 *** Settings ***
 Library  SeleniumLibrary
-Resource  ../Resources/Variables.robot
 
 *** Keywords ***
 Verify Product Added
@@ -9,5 +8,5 @@ Verify Product Added
 Proceed to Checkout
     click element  xpath=//a[@id='hlb-ptc-btn-native']
     sleep   1s
-    click button  xpath=//button[@id='siNoCoverage-announce']
+    click element  xpath=//button[@id='siNoCoverage-announce']
     sleep   1s

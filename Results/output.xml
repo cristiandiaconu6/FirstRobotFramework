@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.1.2 (Python 3.8.1 on win32)" generated="20200311 15:24:03.270" rpa="false">
-<suite id="s1" name="Test" source="C:\Users\cristian.diaconu\PycharmProjects\FirstRobotFramework\tests\test.robot">
-<test id="s1-t1" name="User must sign in to checkout">
+<robot generator="Robot 3.1.2 (Python 3.8.1 on win32)" generated="20200312 10:51:54.527" rpa="false">
+<suite id="s1" name="Tests" source="C:\Users\cristian.diaconu\PycharmProjects\FirstRobotFramework\tests">
+<suite id="s1-s1" name="Test" source="C:\Users\cristian.diaconu\PycharmProjects\FirstRobotFramework\tests\Test.robot">
+<test id="s1-s1-t1" name="User must sign in to checkout">
 <kw name="Begin Web Test" library="Common" type="setup">
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the given ``url``.</doc>
@@ -9,21 +10,10 @@
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20200311 15:24:03.460" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20200311 15:24:03.460" endtime="20200311 15:24:08.532"></status>
+<msg timestamp="20200312 10:51:54.736" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20200312 10:51:54.736" endtime="20200312 10:51:56.883"></status>
 </kw>
-<status status="PASS" starttime="20200311 15:24:03.459" endtime="20200311 15:24:08.532"></status>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<arguments>
-<arg>http://www.google.com</arg>
-</arguments>
-<assign>
-<var>${URL}</var>
-</assign>
-<msg timestamp="20200311 15:24:08.532" level="INFO">${URL} = http://www.google.com</msg>
-<status status="PASS" starttime="20200311 15:24:08.532" endtime="20200311 15:24:08.532"></status>
+<status status="PASS" starttime="20200312 10:51:54.736" endtime="20200312 10:51:56.883"></status>
 </kw>
 <kw name="Search for Products" library="Amazon">
 <kw name="Load" library="LandingPage">
@@ -32,46 +22,207 @@
 <arguments>
 <arg>${URL}</arg>
 </arguments>
-<msg timestamp="20200311 15:24:08.534" level="FAIL">Variable '${URL}' not found.</msg>
-<status status="FAIL" starttime="20200311 15:24:08.533" endtime="20200311 15:24:08.534"></status>
+<msg timestamp="20200312 10:51:56.885" level="INFO">Opening url 'http://www.amazon.com'</msg>
+<status status="PASS" starttime="20200312 10:51:56.885" endtime="20200312 10:51:58.886"></status>
 </kw>
-<status status="FAIL" starttime="20200311 15:24:08.533" endtime="20200311 15:24:08.534"></status>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200312 10:51:58.886" endtime="20200312 10:52:00.050"></status>
 </kw>
-<status status="FAIL" starttime="20200311 15:24:08.532" endtime="20200311 15:24:08.534"></status>
+<status status="PASS" starttime="20200312 10:51:56.885" endtime="20200312 10:52:00.050"></status>
+</kw>
+<kw name="Verify Page Loaded" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Your Amazon.com</arg>
+</arguments>
+<status status="PASS" starttime="20200312 10:52:00.051" endtime="20200312 10:52:00.126"></status>
+</kw>
+<status status="PASS" starttime="20200312 10:52:00.050" endtime="20200312 10:52:00.126"></status>
+</kw>
+<kw name="Search for Products" library="TopNav">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=twotabsearchtextbox</arg>
+<arg>${SEARCH_TERM}</arg>
+</arguments>
+<msg timestamp="20200312 10:52:00.129" level="INFO">Typing text 'Ferrari 458' into text field 'id=twotabsearchtextbox'.</msg>
+<status status="PASS" starttime="20200312 10:52:00.128" endtime="20200312 10:52:00.311"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//div[@class='nav-search-submit nav-sprite']//input[@class='nav-input']</arg>
+</arguments>
+<msg timestamp="20200312 10:52:00.312" level="INFO">Clicking button 'xpath=//div[@class='nav-search-submit nav-sprite']//input[@class='nav-input']'.</msg>
+<status status="PASS" starttime="20200312 10:52:00.312" endtime="20200312 10:52:02.041"></status>
+</kw>
+<status status="PASS" starttime="20200312 10:52:00.126" endtime="20200312 10:52:02.041"></status>
+</kw>
+<kw name="Verify Search Completed" library="SearchResults">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>results for "${SEARCH_TERM}"</arg>
+</arguments>
+<status status="PASS" starttime="20200312 10:52:02.042" endtime="20200312 10:52:02.077"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20200312 10:52:03.078" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200312 10:52:02.077" endtime="20200312 10:52:03.078"></status>
+</kw>
+<status status="PASS" starttime="20200312 10:52:02.041" endtime="20200312 10:52:03.078"></status>
+</kw>
+<status status="PASS" starttime="20200312 10:51:56.884" endtime="20200312 10:52:03.078"></status>
+</kw>
+<kw name="Select Product from Search Results" library="Amazon">
+<kw name="Click Product link" library="SearchResults">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//span[contains(text(),'RASTAR Ferrari Remote Control Car, 1/24 Scale Ferr')]</arg>
+</arguments>
+<msg timestamp="20200312 10:52:03.079" level="INFO">Clicking element 'xpath=//span[contains(text(),'RASTAR Ferrari Remote Control Car, 1/24 Scale Ferr')]'.</msg>
+<status status="PASS" starttime="20200312 10:52:03.079" endtime="20200312 10:52:03.241"></status>
+</kw>
+<status status="PASS" starttime="20200312 10:52:03.079" endtime="20200312 10:52:03.242"></status>
+</kw>
+<kw name="Verify Page Loaded" library="Product">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Back to results</arg>
+</arguments>
+<status status="PASS" starttime="20200312 10:52:03.243" endtime="20200312 10:52:03.973"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20200312 10:52:04.973" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200312 10:52:03.973" endtime="20200312 10:52:04.973"></status>
+</kw>
+<status status="PASS" starttime="20200312 10:52:03.242" endtime="20200312 10:52:04.973"></status>
+</kw>
+<status status="PASS" starttime="20200312 10:52:03.078" endtime="20200312 10:52:04.973"></status>
+</kw>
+<kw name="Add Product to Cart" library="Amazon">
+<kw name="Add to Cart" library="Product">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>id=add-to-cart-button</arg>
+</arguments>
+<msg timestamp="20200312 10:52:04.978" level="INFO">Clicking button 'id=add-to-cart-button'.</msg>
+<status status="PASS" starttime="20200312 10:52:04.977" endtime="20200312 10:52:06.724"></status>
+</kw>
+<status status="PASS" starttime="20200312 10:52:04.977" endtime="20200312 10:52:06.725"></status>
+</kw>
+<kw name="Verify Product Added" library="Cart">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>id=hlb-ptc-btn-native</arg>
+</arguments>
+<status status="PASS" starttime="20200312 10:52:06.725" endtime="20200312 10:52:06.739"></status>
+</kw>
+<status status="PASS" starttime="20200312 10:52:06.725" endtime="20200312 10:52:06.739"></status>
+</kw>
+<status status="PASS" starttime="20200312 10:52:04.976" endtime="20200312 10:52:06.739"></status>
+</kw>
+<kw name="Begin Checkout" library="Amazon">
+<kw name="Proceed to Checkout" library="Cart">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//a[@id='hlb-ptc-btn-native']</arg>
+</arguments>
+<msg timestamp="20200312 10:52:06.740" level="INFO">Clicking element 'xpath=//a[@id='hlb-ptc-btn-native']'.</msg>
+<status status="PASS" starttime="20200312 10:52:06.740" endtime="20200312 10:52:06.848"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20200312 10:52:07.850" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200312 10:52:06.848" endtime="20200312 10:52:07.850"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//button[@id='siNoCoverage-announce']</arg>
+</arguments>
+<msg timestamp="20200312 10:52:07.850" level="INFO">Clicking element 'xpath=//button[@id='siNoCoverage-announce']'.</msg>
+<status status="PASS" starttime="20200312 10:52:07.850" endtime="20200312 10:52:09.039"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20200312 10:52:10.042" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200312 10:52:09.040" endtime="20200312 10:52:10.042"></status>
+</kw>
+<status status="PASS" starttime="20200312 10:52:06.740" endtime="20200312 10:52:10.042"></status>
+</kw>
+<kw name="Verify Page Loaded" library="SignIn">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20200312 10:52:11.045" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200312 10:52:10.043" endtime="20200312 10:52:11.045"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>xpath=//a[@id='createAccountSubmit']</arg>
+</arguments>
+<msg timestamp="20200312 10:52:11.067" level="INFO">Current page contains element 'xpath=//a[@id='createAccountSubmit']'.</msg>
+<status status="PASS" starttime="20200312 10:52:11.045" endtime="20200312 10:52:11.067"></status>
+</kw>
+<status status="PASS" starttime="20200312 10:52:10.043" endtime="20200312 10:52:11.067"></status>
+</kw>
+<status status="PASS" starttime="20200312 10:52:06.740" endtime="20200312 10:52:11.067"></status>
 </kw>
 <kw name="End Web Test" library="Common" type="teardown">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20200311 15:24:08.536" endtime="20200311 15:24:10.657"></status>
+<status status="PASS" starttime="20200312 10:52:11.069" endtime="20200312 10:52:13.241"></status>
 </kw>
-<status status="PASS" starttime="20200311 15:24:08.535" endtime="20200311 15:24:10.657"></status>
+<status status="PASS" starttime="20200312 10:52:11.068" endtime="20200312 10:52:13.241"></status>
 </kw>
 <tags>
 <tag>Smoke</tag>
 </tags>
-<status status="FAIL" starttime="20200311 15:24:03.459" endtime="20200311 15:24:10.657" critical="yes">Variable '${URL}' not found.</status>
+<status status="PASS" starttime="20200312 10:51:54.735" endtime="20200312 10:52:13.243" critical="yes"></status>
 </test>
-<status status="FAIL" starttime="20200311 15:24:03.272" endtime="20200311 15:24:10.660"></status>
+<status status="PASS" starttime="20200312 10:51:54.553" endtime="20200312 10:52:13.250"></status>
+</suite>
+<status status="PASS" starttime="20200312 10:51:54.529" endtime="20200312 10:52:13.261"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1">Critical Tests</stat>
-<stat pass="0" fail="1">All Tests</stat>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1">Smoke</stat>
+<stat pass="1" fail="0">Smoke</stat>
 </tag>
 <suite>
-<stat pass="0" fail="1" id="s1" name="Test">Test</stat>
+<stat pass="1" fail="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" id="s1-s1" name="Test">Tests.Test</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20200311 15:24:03.441" level="ERROR">Error in file 'C:\Users\cristian.diaconu\PycharmProjects\FirstRobotFramework\Resources\PO\LandingPage.robot': Resource file '..\Resources\Variables.robot' does not exist.</msg>
-<msg timestamp="20200311 15:24:03.444" level="ERROR">Error in file 'C:\Users\cristian.diaconu\PycharmProjects\FirstRobotFramework\Resources\PO\Cart.robot': Resource file '..\Resources\Variables.robot' does not exist.</msg>
-<msg timestamp="20200311 15:24:03.446" level="ERROR">Error in file 'C:\Users\cristian.diaconu\PycharmProjects\FirstRobotFramework\Resources\PO\Product.robot': Resource file '..\Resources\Variables.robot' does not exist.</msg>
-<msg timestamp="20200311 15:24:03.449" level="ERROR">Error in file 'C:\Users\cristian.diaconu\PycharmProjects\FirstRobotFramework\Resources\PO\SearchResults.robot': Resource file '..\Resources\Variables.robot' does not exist.</msg>
-<msg timestamp="20200311 15:24:03.452" level="ERROR">Error in file 'C:\Users\cristian.diaconu\PycharmProjects\FirstRobotFramework\Resources\PO\SignIn.robot': Resource file '..\Resources\Variables.robot' does not exist.</msg>
-<msg timestamp="20200311 15:24:03.454" level="ERROR">Error in file 'C:\Users\cristian.diaconu\PycharmProjects\FirstRobotFramework\Resources\PO\TopNav.robot': Resource file '..\Resources\Variables.robot' does not exist.</msg>
 </errors>
 </robot>
-
